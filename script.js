@@ -112,6 +112,27 @@ buttons.forEach((button)=>{
         }
     })
 }
+
+// Search button click
+document.querySelector("#search").addEventListener(("click"),()=>{
+
+   let searchInput = document.querySelector("#search-input").value ;
+
+   let elements = document.querySelectorAll(".product-name");
+
+   let cards = document.querySelectorAll(".card") ;
+
+   elements.forEach((element,index)=>{
+
+        if(element.innerText.includes(searchInput.toUpperCase())){
+             cards[index].classList.remove('hide') ;
+        }
+        else {
+            cards[index].classList.add('hide') ;
+        }
+   })
+})
+
 //initially display all products
 window.onload = ()=>{
     filterProduct('All');
